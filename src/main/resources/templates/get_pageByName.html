@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DirList</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>DirList</h2>
+    <a class="btn btn-primary float-right" href="./list_page.html" th:href="@{./}">List</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>PhoneNum</th>
+            <th>Email</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tr th:action="@{./get(name=${directory.name})}" >
+            <td th:text="${directory.id}">1</td>
+            <td th:text="${directory.name}">Bob</td>
+            <td th:text="${directory.phone}">111</td>
+            <td th:text="${directory.email}">111@111.com</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
