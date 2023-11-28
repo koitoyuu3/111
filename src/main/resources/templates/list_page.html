@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>TodoList</title>
+    <title>DirList</title>
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -17,8 +17,9 @@
 </head>
 <body>
 <div class="container">
-    <h2>TodoList</h2>
+    <h2>DirList</h2>
     <a class="btn btn-primary float-right" href="./add_page.html" th:href="@{./add}">Add</a>
+
     <table class="table">
         <thead>
         <tr>
@@ -30,16 +31,15 @@
         </tr>
         </thead>
         <tbody th:remove="all-but-first">
-        <tr th:each="directory:${directories}" >
-            <td th:text="${directoryStat.count}">1</td>
-            <td th:text="${directory.name}">Bob</td>
-            <td th:text="${directory.phone}">111</td>
-            <td th:text="${directory.email}">111@111.com</td>
-            <td>
+        <tr th:each="Directory:${Directories}">
+            <td th:text="${DirectoryStat.count}">1</td>
+            <td th:text="${Directory.name}">Bob</td>
+            <td th:text="${Directory.phone}">111</td>
+            <td th:text="${Directory.email}">111@111.com</td>
                 <a type="button" class="btn btn-xs btn-success" href="./edit_page.html?id=1"
-                   th:href="@{./edit(id=${directory.id})}">编辑</a>
+                   th:href="@{./edit(id=${Directory.id})}">编辑</a>
                 <a type="button" class="btn  btn-xs btn-danger" href="./delete?id=1"
-                   th:href="@{./delete(id=${directory.id})}">删除</a>
+                   th:href="@{./delete(id=${Directory.id})}">删除</a>
             </td>
         </tr>
         <tr>
@@ -52,6 +52,8 @@
         </tr>
         </tbody>
     </table>
+    <a class="btn btn-primary float-right" href="./input_name.html" th:href="@{./getByName}">GetByName</a>
+    <a class="btn btn-primary float-right" href="./input_phone.html" th:href="@{./getByPhone}">GetByPhone</a>
 </div>
 
 </body>

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>TodoList</title>
+    <title>DirList</title>
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -21,11 +21,21 @@
         <li class="breadcrumb-item"><a href="./list_page.html" th:href="@{./}">Home</a></li>
         <li class="breadcrumb-item active">Edit</li>
     </ol>
-    <form action="./edit" method="post" th:action="@{./edit(id=${todo.id})}">
+    <form action="./edit" method="post" th:action="@{./edit(id=${directory.id})}">
         <div class="form-group">
-            <label for="content">Content:</label>
-            <input type="text" class="form-control" id="content" name="content"
-                   th:value="${todo.content}">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name"
+                   th:value="${directory.name}">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" id="phone" name="phone"
+                   th:value="${directory.phone}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email"
+                   th:value="${directory.email}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

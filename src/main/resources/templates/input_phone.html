@@ -18,13 +18,13 @@
 <body>
 <div class="container">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="get_pageByName.html" th:href="@{./getByName}">Home</a></li>
-        <li class="breadcrumb-item active">InputName</li>
+        <li class="breadcrumb-item"><a href="get_pageByPhone.html" th:href="@{./getByPhone}">Home</a></li>
+        <li class="breadcrumb-item active">InputPhone</li>
     </ol>
-    <form action="./getByName" method="post" th:action="@{./getByName}">
+    <form action="./getByPhone" method="post" th:action="@{./getByPhone}">
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" id="phone" name="phone">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

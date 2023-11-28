@@ -29,7 +29,7 @@
             <th>Operation</th>
         </tr>
         </thead>
-        <tr th:action="@{./getByName(name=${directory.name})}" >
+        <tr th:action="@{./getByPhone(phone=${directory.phone})}" >
             <td th:text="${directory.id}">1</td>
             <td th:text="${directory.name}">Bob</td>
             <td th:text="${directory.phone}">111</td>
